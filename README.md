@@ -39,9 +39,9 @@ Watch the Tree component in action on the [demo page](http://www.araltasher.com/
 
 ####Running a Local Development Web Server
 To debug code and run end-to-end tests, it is often useful to have a local HTTP server. 
-For this purpose, we have made available a local web server based on Node.js.
+You can use a simple python script to run the page on your local machine.
 
-From your terminal go to your repostiroy folder:
+From your terminal go to your repository folder:
 
     $ cd /path-to-my-folder/material-ui-tree
 
