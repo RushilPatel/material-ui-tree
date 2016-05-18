@@ -1,7 +1,6 @@
 <img src="https://raw.githubusercontent.com/araltasher/material-ui-tree/master/material-ui-tree-icon.png" alt="material-ui-tree-icon" width="250"/>
 
 # material-ui-tree
-======================
 
 [![Build Status](https://travis-ci.org/angular-ui-tree/angular-ui-tree.svg?branch=master)](https://travis-ci.org/angular-ui-tree/angular-ui-tree) 
 
