@@ -1,0 +1,22 @@
+<md-dialog flex="40" ng-cloak>
+    <md-dialog-content>
+        <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+            <md-input-container flex>
+                <label>Name</label>
+                <input class="md-headline" ng-model="task.name" required>
+                <div ng-messages="projectForm.clientName.$error">
+                    <div ng-message="required">This is a required field.</div>
+                </div>
+            </md-input-container>
+        </md-content>
+        <md-content layout-padding>
+            <form name="userForm">
+                <md-select ng-model="templateList" aria-label="templateList" ng-change="changedValue(templateList)">
+                    <md-option ng-repeat="yoshkaTemplate in templateList" value="{{yoshkaTemplate.name}}">
+                        {{yoshkaTemplate.name}}
+                    </md-option>
+                </md-select>
+            </form>
+        </md-content>
+    </md-dialog-content>
+</md-dialog>

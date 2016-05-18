@@ -1,0 +1,35 @@
+<md-dialog flex="40" ng-cloak>
+  <md-dialog-content>
+    <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+      <md-input-container flex>
+        <label>Name</label>
+        <input class="md-headline" ng-model="task.name">
+      </md-input-container>
+    </md-content>
+    <md-content layout-padding>
+      <form name="userForm">
+
+        <md-input-container ng-repeat='(key, prop) in task track by key' ng-if="key != 'id' && key != 'name'&& key != 'behavior' && key != 'args'" class="md-block" flex-gt-sm>
+          <label>{{key}}</label>
+          <input class="md-body-2" ng-model='task[key]'>
+        </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+              <label>Args</label>
+              <textarea class="code" ng-model='task.args' json md-detect-hidden></textarea>
+          </md-input-container>
+
+        <md-input-container ng-repeat='children in task.behavior'  class="md-block" flex-gt-sm>
+          <label>Child Node</label>
+          <input class="md-body-2" ng-model='children.name'>
+        </md-input-container>
+
+      </form>
+    </md-content>
+  </md-dialog-content>
+  <md-dialog-actions layout="row" layout-align="center center">
+    <md-button class="md-primary md-raised md-hue-1" style="color:#fff" ng-click="save()">
+      Save
+    </md-button>
+  </md-dialog-actions>
+</md-dialog>
