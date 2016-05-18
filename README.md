@@ -22,18 +22,18 @@ The Angular UI Tree is tested with the following browsers:
 - IE 8, 9 and 10
 
 ## Demo
-Watch the Tree component in action on the [demo page](http://angular-ui-tree.github.io/angular-ui-tree/).
+Watch the Tree component in action on the [demo page](http://www.araltasher.com/material-ui-tree).
 
 ## Requirements
 
-- Angularjs
+- Angular js
 - Material Framework
 
 ## Usage
 
 ### Download
 
-- [Download .zip](https://github.com/araltasher/material-ui-tree.git) from github.
+- [Download .zip](https://github.com/araltasher/material-ui-tree.git) from Github
 
 ## Useful commands
 
