@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/araltasher/material-ui-tree/master/material-ui-tree-icon.png" alt="material-ui-tree-icon" width="50"/>
+<img src="https://raw.githubusercontent.com/araltasher/material-ui-tree/master/material-ui-tree-icon.png" alt="material-ui-tree-icon" width="80"/>
 
 # material-ui-tree
 
