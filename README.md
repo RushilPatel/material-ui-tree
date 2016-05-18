@@ -2,4 +2,4 @@
 
 # material-ui-tree
 
-This is an adaptation of angular-ui-tree with Material Framework
+This is an adaptation of angular-ui-tree with Material Framework. Here's the original [repo](https://github.com/angular-ui-tree/angular-ui-tree)
