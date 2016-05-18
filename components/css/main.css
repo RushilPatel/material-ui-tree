@@ -1,0 +1,114 @@
+.md-headline-2 {
+  font-weight: 300;
+  color: #fff;
+}
+
+.md-headline {
+  font-weight: 300;
+}
+
+.docs-menu,
+.docs-menu ul {
+  font-weight: 400;
+  cursor: pointer;
+  list-style: none;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.docs-menu li {
+  margin: 0;
+}
+
+.docs-menu .md-button {
+  border-radius: 0;
+  color: #26a69a;
+  cursor: pointer;
+  display: block;
+  align-items: inherit;
+  line-height: 40px;
+  margin: 0;
+  max-height: 40px;
+  text-align: left;
+  text-decoration: none;
+  white-space: normal;
+  width: 100%;
+}
+
+.docs-menu .md-button:hover,
+.docs-menu .md-button:focus {
+  background: #26a69a !important;
+  color: #fff;
+}
+
+md-checkbox.md-checked .md-icon{
+background-color: rgba(38,166,154,0.87);
+}
+/* --- UI Tree --- */
+
+.angular-ui-tree-handle {
+
+    color: #7c9eb2;
+    padding: 10px 10px;
+}
+
+.angular-ui-tree-handle:hover {
+    background: #f2f2f2;
+
+}
+
+.angular-ui-tree-placeholder {
+    background: #f0f9ff;
+    border: 2px dashed #bed2db;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+tr.angular-ui-tree-empty {
+    height:100px
+}
+
+.group-title {
+    background-color: #687074 !important;
+    color: #FFF !important;
+}
+
+
+/* --- Tree --- */
+.tree-node {
+    color: #333333;
+}
+
+.nodrop {
+    background-color: #f2dede;
+}
+
+.tree-node-content {
+    margin: 10px;
+}
+.tree-handle {
+    padding: 10px;
+
+    color: #FFF;
+    margin-right: 10px;
+}
+
+.angular-ui-tree-handle:hover {
+}
+
+.angular-ui-tree-placeholder {
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* --- UI Tree --- */
+
+.code{
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0;
+}

@@ -1,0 +1,125 @@
+<html lang="en" ng-app="Project">
+
+<head>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link rel="stylesheet" href="./components/css/angular-ui-tree.min.css">
+    <link rel="stylesheet" href="./components/css/main.css">
+    <link rel="stylesheet" href="./components/css/materialdesignicons.min.css" type="text/css" media="all" />
+
+    <title>GitHub Project</title>
+</head>
+
+<body layout="row" ng-controller="AppController">
+    <section layout="row" flex>
+        <md-sidenav flex-gt-sm="15" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+            <md-toolbar class="md-primary">
+                <div layout="row">
+                    <div flex>
+                        <span class="md-toolbar-tools"><a class="md-icon" ng-href="/#/" href="/#/">
+                <p class="md-headline">Github Project</p>
+            </a></span>
+                    </div>
+                    <div> <span class="md-toolbar-tools">
+            <md-button ng-click="toggleLeft()" class="mdi mdi-arrow-left-bold" hide-gt-sm
+                       aria-label="toggleLeft"></md-button></span>
+                    </div>
+                </div>
+            </md-toolbar>
+            <md-content role="navigation" layout-margin>
+                <span ng-repeat="template in templateList">
+                        <ul class="docs-menu md-margin" ng-repeat="(category, tasks) in template">
+                            <md-checkbox ng-model="checked">{{category}}</md-checkbox>
+                            <li ng-if="checked" ng-repeat="task in tasks">
+                                <md-button class="md-primary" ng-click="newFromTemplate(task)" aria-label="createFromTemplate">
+                                    {{task.name}}
+                                </md-button>
+                            </li>
+                        </ul>
+                    </span>
+            </md-content>
+            <span flex></span>
+        </md-sidenav>
+
+        <md-content flex>
+
+            <div layout="column" layout-fill>
+                <md-toolbar layout="row" class="md-whiteframe-z1 md-primary">
+                    <md-button ng-click="toggleLeft()" class="mdi mdi-menu" hide-gt-sm aria-label="toggleLeft">
+                    </md-button>
+                </md-toolbar>
+                <div layout="row" flex>
+                    <md-content flex>
+
+                        <md-toolbar class="md-accent md-hue-2 md-whiteframe-z1">
+                            <div class="md-toolbar-tools">
+                                <span flex>
+             <p class="md-headline-2">Material Treeview UI</p>
+        </span>
+                                <span flex></span>
+                                <md-button class="md-icon-button" data-nodrag ng-click="newItem(this)" aria-label="add">
+                                    <span ng-style="{'font-size': '18px'}" class="mdi mdi-plus"></span>
+                                    <md-tooltip md-direction="bottom">
+                                        New Behavior
+                                    </md-tooltip>
+                                </md-button>
+                            </div>
+                        </md-toolbar>
+
+                        <md-content layout-gt-md="row" layout-gt-xs="column" layout-margin>
+                            <md-content style="height:800px; overflow: auto;" flex-gt-md="50" flex-gt-xs="60" ui-tree id="tree-root">
+                                <ol ui-tree-nodes ng-model="data">
+                                    <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+                                </ol>
+                            </md-content>
+                            <md-content style="height:800px; overflow: auto;" flex-gt-md="50" class="md-whiteframe-z1" layout-margin layout-padding>
+                                <p class="md-body-1">
+                                    {{info}}
+                                </p>
+                                <pre class="code">{{ data | json }}</pre>
+                            </md-content>
+                        </md-content>
+
+
+                        <script type="text/ng-template" id="nodes_renderer.html">
+                            <md-content layout="row" layout-margin ui-tree-handle class="tree-node tree-node-content md-whiteframe-z1" layout-wrap>
+                                <md-button class="md-primary md-icon-button" ng-if="node.behavior && node.behavior.length > 0" data-nodrag ng-click="toggle(this)" aria-label="collapse"><span ng-class="{
+        'mdi mdi-arrow-right-bold': collapsed,
+          'mdi mdi-arrow-down-bold': !collapsed
+      }"></span></md-button>
+                                <p class="md-body-2"> {{node.name}}</p>
+                                <span flex></span>
+                                <md-button class="md-accent md-icon-button" data-nodrag ng-click="showAdvanced($event, node)" aria-label="Configure"><span class="mdi mdi-pencil"></span></md-button>
+                                <md-button class="md-warn md-icon-button" data-nodrag ng-click="remove(this)" aria-label="remove"><span class="mdi mdi-close"></span></md-button>
+                                <md-button class="md-primary md-icon-button" data-nodrag ng-click="newSubItem(this)" aria-label="add" ng-disabled="node.success.length == 0 && node.failure.length == 0"><span class="mdi mdi-plus"></span></md-button>
+                            </md-content>
+                            <ol ui-tree-nodes="" ng-model="node.behavior" ng-class="{hide: collapsed}">
+                                <li ng-repeat="node in node.behavior" ui-tree-node ng-include="'nodes_renderer.html'">
+                                </li>
+                            </ol>
+                        </script>
+
+
+                    </md-content>
+                </div>
+            </div>
+        </md-content>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>
+
+    <script src="./app.js"></script>
+    <script src="components/js/angular-ui-tree.min.js"></script>
+    <script src="components/controllers/config.js"></script>
+    <script src="components/controllers/yoshkaTemplates.js"></script>
+
+</body>
+
+</html>
