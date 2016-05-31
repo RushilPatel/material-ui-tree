@@ -109,7 +109,7 @@ $scope.showAdvanced = function(ev, node) {
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
     $mdDialog.show({
         controller: 'ConfigController',
-        templateUrl: '/components/views/config.tmpl.html',
+        templateUrl: '/components/views/config.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         locals: {
